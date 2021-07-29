@@ -1,0 +1,124 @@
+/*
+  
+  TYPOGRAPHY
+  
+  Tokens for typographic elements.
+
+  Contents:
+    - Font Stacks
+    - Font Size
+    - Font Weight
+    - Body
+    - Line Height
+    - Headings
+    - Display Headings
+    - Lead Paragraphs
+    - Links
+    - Small
+    - Highlight
+
+*/
+
+// BASE 
+// ────────────────────────────────────
+// Used to initialize the root font styles
+
+// FONT STACKS
+$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+// FONT SIZE
+$font-size-root:              null !default; // Doesn't set a value unless you override it
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * .875 !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+
+// FONT WEIGHT
+$font-weight-100:             100 !default; // Thin
+$font-weight-200:             200 !default; // Extra Light
+$font-weight-300:             300 !default; // Light
+$font-weight-400:             400 !default; // Regular
+$font-weight-500:             500 !default; // Medium
+$font-weight-600:             600 !default; // Semi Bold
+$font-weight-700:             700 !default; // Bold
+$font-weight-800:             800 !default; // Extra Bold
+$font-weight-900:             900 !default; // Black
+$font-weight-base:            $font-weight-regular !default;
+
+// BODY
+$body-font-color:             $black !default;
+$body-text-align:             left !default;
+
+// LINE HEIGHT
+$line-height-base:            1.2 !default;
+$line-height-sm:              1 !default;
+$line-height-lg:              1.6 !default;
+
+// HEADINGS
+// ────────────────────────────────────
+// Note: values set to `null` will inherit from root styles applied to body
+
+$heading-font-family:         $font-family-monospace !default;
+$heading-font-weight:         $font-weight-700 !default;
+$heading-font-style:          null !default;
+$heading-line-height:         $line-height-base !default;
+$heading-color:               null !default;
+$heading-text-transform:      null !default;
+$heading-margin-bottom:       $spacer-2 !default;
+
+$h1-font-size:                3rem !default;
+$h2-font-size:                2.5rem !default;
+$h3-font-size:                2rem !default;
+$h4-font-size:                1.75rem !default;
+$h5-font-size:                1.5rem !default;
+$h6-font-size:                1rem !default;
+
+// DISPLAY HEADINGS
+// ────────────────────────────────────
+
+$display-font-family:         $font-family-monospace !default;
+$display-font-weight:         $font-weight-400 !default;
+$display-font-style:          null !default;
+$display-line-height:         $line-height-base !default;
+$display-color:               null !default;
+$display-text-transform:      null !default;
+$display-margin-bottom:       $spacer-2 !default;
+
+// TODO: MAYBE add more
+$d1-font-size:                4.75rem !default;
+$d2-font-size:                3.75rem !default;
+$d3-font-size:                3.25rem !default;
+
+// LEAD PARAGRAPHS
+// ────────────────────────────────────
+
+$lead-font-size:              1.5rem !default;
+$lead-font-weight:            $font-weight-200;
+
+// LINKS
+// ────────────────────────────────────
+// Text links
+
+$link-color:                    $blue !default;
+$link-font-weight:              500 !default;
+$link-decoration:               underline !default;
+$link-hover-color:              $blue-700 !default;
+$link-hover-background-color:   $cyan-100 !default;
+$link-hover-decoration:         null !default;
+
+// SMALL
+// ────────────────────────────────────
+
+$small-font-size:               0.875rem !default;
+$small-font-weight:             $font-weight-500 !default;
+$small-font-style:              null !default;
+$small-text-transform:          uppercase !default;
+
+// HIGHLIGHT
+// ────────────────────────────────────
+// Selected text, aka highlighted text
+
+// TODO: add selector that uses this in _base.scss
+$highlight-bg:                null !default;
+$highlight-fg:                null !default;

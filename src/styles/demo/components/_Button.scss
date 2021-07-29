@@ -1,0 +1,127 @@
+/*
+  
+  BUTTON
+  
+  Styles for the Button component
+  
+  Docs: TBD
+  
+*/
+
+.Button {
+  background-color: $blue;
+  border: none;
+  border-radius: $border-radius;
+  padding: 10px 26px; 
+  color: $canvas;
+  border: 1px solid transparent;
+  transition: background-color $animate-faster;
+  outline: 0;
+
+  &:hover{
+    background-color: $blue-500;
+    color: $canvas;
+  }
+
+  &--focused{
+    border: 1px solid transparent;
+    outline-offset: 2px;
+    outline: 2px solid $purple;
+  }
+
+  &--small{
+    padding: 5px 11px; 
+  }
+
+  &--large{
+    padding: 18px 42px; 
+  }
+
+  &--block{
+    padding: 18px;
+    width: 100%;
+  }
+
+  &--pressed {
+    background-color: $blue-600;
+    &:hover{
+      background-color: $blue-600;
+    }
+  }
+
+  &--selected {
+    background-color: darkred;
+    &:hover{
+      background-color: #580202;
+    }
+  }
+
+  &--disabled{
+    background-color: $gray-100;
+    cursor: not-allowed;
+    &:hover{
+      background-color: $gray-100;
+      color: $canvas;
+    }
+  }
+
+}
+
+// Kinds
+.Button--ghost {
+  background-color: transparent;
+  border: 1px solid $blue;
+  color: $blue;
+  padding: 10px 26px;
+
+  &:hover{
+    border: 1px solid $blue-500;
+    color: $blue-500;
+    background-color: $blue-100;
+  }
+  &--focused{
+    border: 1px solid $blue;
+    outline-offset: 2px;
+  }
+
+  &--pressed{
+    background-color: $blue-200;
+  }
+
+  &.Button--disabled{
+    border: 1px solid $gray-100;
+    color: $gray-100;
+    cursor: not-allowed;
+    &:hover{
+      border: 1px solid $gray-100;
+      color: $gray-100;
+      background-color: transparent;
+    }
+  }
+
+}
+.Button--text {
+  background-color: transparent;
+  color: $blue;
+
+  &:hover{
+    background-color: $blue-100;
+    color: $blue;
+  }
+  &--focused{
+    border: 1px solid transparent;
+    outline-offset: 2px;
+    outline: 2px solid $purple;
+  }
+  &--pressed{
+    background-color: $blue-200;
+  }
+  &.Button--disabled{
+    color: $gray-100;
+    cursor: not-allowed;
+    &:hover{
+      background-color: transparent;
+      color: $gray-100;
+    }
+  }
+}

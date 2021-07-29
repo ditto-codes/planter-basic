@@ -1,0 +1,183 @@
+/*
+  
+  CODE
+  
+  Code component styles and Prism css overrides
+  
+  Docs: TBD
+  
+*/
+
+// IMPORT PRISMJS THEME
+// ────────────────────────────────────
+
+// This can be replaced with a different theme
+@import '../../../node_modules/prismjs/themes/prism';
+
+
+// CODE COMPONENT STYLES
+// ────────────────────────────────────
+
+// TODO: custom highlight color within Code instances
+.Code { color: $light-red-600; }
+.Code--block {}
+.Code--inline {
+  font-family: $font-family-monospace;
+  font-weight: 500;
+  background-color: $orange-100;
+}
+
+.Code__Wrapper { 
+  padding: 20px; 
+  position: relative;
+  background-color: $orange-100;
+  border-radius: $border-radius;
+}
+.Code__Wrapper--block {
+  background-color: $orange-700;
+  color: $orange-500;
+
+  &:hover{
+    color: $orange-300;
+
+    button{
+      color: $orange-300;
+    }
+  }
+
+  button{
+    background-color: transparent;
+    color: $orange-500;
+    border: none;
+    border-radius: $border-radius;
+    &:hover{
+      color: $orange-700;
+      background-color: $orange-300;
+    }
+    &:focus{
+      outline: none;
+      border: none;
+    }
+  }
+}
+.Code__Wrapper--inline {
+  padding: 5px;
+}
+
+.Code__CopyButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.Code__LanguageLabel {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  cursor: default;
+}
+
+// Override the code element so it looks the same as .Code
+code {
+  @extend .Code;
+}
+
+// Prism.js Styles
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: $canvas;
+	font-family: $font-family-monospace;
+  font-size: 1em;
+  font-weight: 400;
+  text-shadow: 0 1px $gray-600;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: $orange-700;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: $orange-500;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: $orange-500;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: $orange-500;
+}
+
+.token.punctuation {
+	color: $gray-100;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: $light-red-600;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: $green-300;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: $orange-500;
+  background: none;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: $cyan-300;
+}
+
+.token.function,
+.token.class-name {
+	color: $light-red;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: $orange;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}

@@ -1,0 +1,77 @@
+/* 
+
+  SPACING
+
+  Tokens + Functions
+
+  Set a base spacer and then modify it via the space function.
+
+  $spacer: 1rem
+
+  .my-custom-class {
+    padding: space(1) space(2); -> padding: 8px 16px
+  }
+
+  .my-other-class {
+    padding: sp(.5) sp(1); -> padding: 4px 8px
+  }
+
+  NOTE: See presets below the function.
+
+*/
+
+$spacer: .5rem !default;
+
+// SPACING functions
+// ────────────────────────────────────
+
+// Mulitply the `spacer` token by the passed value
+@function space($multiplier) {
+  $str: #{$multiplier};
+  $multipliers: str-to-list($str);
+  @if length($multipliers) > 1 {
+    @if length($multipliers) == 2 {
+      $m1: nth($multipliers, 1);
+      $m2: nth($multipliers, 2);
+      @return calc(#{$spacer} * #{$m1}) calc(#{$spacer} * #{$m2});
+    } 
+    @else if length($multipliers) == 3 {
+      $m1: nth($multipliers, 1);
+      $m2: nth($multipliers, 2);
+      $m3: nth($multipliers, 3);
+      @return calc(#{$spacer} * #{$m1}) calc(#{$spacer} * #{$m2}) calc(#{$spacer} * #{$m3});
+
+
+      // @return (calc(#{#{$spacer}} #{* #{$}m1})) (#{$spacer} * #{$m2}) (#{$spacer} * #{$m3});
+    }
+    @else if length($multipliers) == 4 {
+      $m1: nth($multipliers, 1);
+      $m2: nth($multipliers, 2);
+      $m3: nth($multipliers, 3);
+      $m4: nth($multipliers, 4);
+      @return calc(#{$spacer} * #{$m1}) calc(#{$spacer} * #{$m2}) calc(#{$spacer} * #{$m3}) calc(#{$spacer} * #{$m4});
+      // @return (calc(#{#{$spacer}} #{* #{$}m1})) (#{$spacer} * #{$m2}) (#{$spacer} * #{$m3}) (#{$spacer} * #{$m4});
+    }
+    @else {
+      @error 'Error: space: too many arguments';
+    }
+  }
+  @else {
+    @return calc(#{$spacer} * #{$multiplier});
+  } 
+}
+
+// Alias shorthand for `space` function
+@function sp($multipliers...) {
+  @return space($multipliers...);
+}
+
+// Assuming 8px = $spacer
+$spacer-1:  sp(.5);   // 4px
+$spacer-2:  sp(1);    // 8px
+$spacer-3:  sp(2);    // 16px
+$spacer-4:  sp(3);    // 24px
+$spacer-5:  sp(4);    // 32px
+$spacer-6:  sp(6);    // 48px
+$spacer-7:  sp(8);    // 64px
+$spacer-8:  sp(9);    // 72px

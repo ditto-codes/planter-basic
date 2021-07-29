@@ -1,0 +1,58 @@
+.Slider {
+  position: relative;
+  display: flex;
+  flex-direction: 'column';
+  align-items: 'center';
+  width: 300px;
+  touch-action: none;
+}
+
+.Slider__LabelWrapper {
+  display: flex;
+  align-self: stretch;
+}
+
+.Slider__Label {
+
+}
+
+.Slider__Value {
+
+}
+
+.Slider__TrackGroup {
+  position: relative;
+  height: 30px;
+  width: 100%;
+}
+
+.Slider__Track {
+  position: absolute;
+  background-color: gray;
+  height: 3px;
+  top: 13;
+  width: 100%;
+}
+
+.Slider__ThumbWrapper {
+  position: absolute;
+  top: 4;
+  transform: translateX(-50%);
+}
+
+.Slider__Thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.Slider__Thumb--focus {
+  background-color: orange;
+}
+
+.Slider__Thumb--dragging {
+  background-color: dimgray;
+}
+
+

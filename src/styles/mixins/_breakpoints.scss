@@ -1,0 +1,64 @@
+/* 
+Breakpoint Mixins
+
+Example Usage: 
+
+  @include breakpoint(sm, up);
+  @include breakpoint(lg, down);
+  @include breakpoint(sm, md, between);
+
+  
+
+*/
+
+// https://github.com/twbs/bootstrap/blob/main/scss/mixins/_breakpoints.scss
+// https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
+// https://adrianmanduc.medium.com/how-to-create-a-scss-mixin-for-responsive-design-8aad4f70f1d5
+
+
+@mixin breakpoint($breakpoint, $direction: min) {
+
+  //check if the supplied breakpoint exists in our breakpoits map
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-values: map-get($breakpoints, $breakpoint);
+    $breakpoint-min: map-get($breakpoint-values, min);
+    $breakpoint-max: map-get($breakpoint-values, max);
+
+    //check if we are writing styles for larger or smaller screens
+    @if $direction==min {
+      @media (min-width: $breakpoint-min) {
+        @content;
+      }
+    }
+
+    @else {
+      @media (max-width: $breakpoint-max) {
+        @content;
+      }
+    }
+
+    // use the custom value if the breakpoint is not part of the pre-defined list
+  }
+
+  @else {
+
+    @if $direction==min {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    }
+
+    @else {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}
+
+// Wrappers
+@mixin bp-above {}
+@mixin bp-below {}
+@mixin bp {
+  @include bp-above {}
+} // default direction

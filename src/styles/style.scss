@@ -1,7 +1,23 @@
-@import 'variables';
+/* 
 
-a { color: pink; }
+  Planter Basic CSS
 
-.some {
-  color: $red;
-}
+  By default the main Planter Basic imports are using index files in each sub-directory
+  Manage specific imports in those index files
+  Read more: https://sass-lang.com/documentation/at-rules/import#index-files 
+
+*/
+
+// Configruation
+@import 'tokens';
+@import 'mixins';
+
+// Reset
+@import 'vendor/normalize/normalize.css';
+
+// Main
+@import 'base';
+@import 'grid';
+
+// Demo
+@import 'demo';

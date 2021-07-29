@@ -1,0 +1,47 @@
+.Modal{
+  background-color: $canvas;
+  display: none;
+}
+
+.Modal.Modal--open{
+  display: block;
+}
+
+.Modal__Button{
+  margin-right: 1rem;
+}
+
+.Modal__Header{
+  display: grid;
+  grid-template-columns: auto 35px;
+  grid-template-rows: 35px;
+  padding-left: 16px;
+}
+
+.Modal__Close{
+  background-color: $gray-200;
+  color: $gray;
+  border: none;
+}
+
+.Modal__HeaderTitle{
+  font-family: $font-family-monospace;
+  padding-top: 16px;
+  h3{
+    font-size: 1rem;
+    font-weight: 500;
+    color: $gray-200;
+  }
+}
+
+.Modal__Body{
+  padding: 16px;
+  & *:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.Modal__Footer{
+  padding: 16px;
+  padding-top: 0;
+}
