@@ -1,3 +1,31 @@
+/*
+  Bootstrap 5.0.0
+  Source: https://github.com/twbs/bootstrap/blob/c30b6df54bcaffa52a5e9f4bf117aa5dcd7b7a7e/scss/mixins/_grid.scss
+
+  The MIT License (MIT)
+
+  Copyright (c) 2011-2020 Twitter, Inc. (Bootstrap)
+  Copyright (c) 2011-2020 The Bootstrap Authors (Bootstrap)
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
+*/
+
 /// Grid system
 //
 // Generate semantic grid columns with these mixins.
@@ -7,9 +35,9 @@
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(var(--bs-gutter-y) * -1); // stylelint-disable-line function-blacklist
-  margin-right: calc(var(--bs-gutter-x) / -2); // stylelint-disable-line function-blacklist
-  margin-left: calc(var(--bs-gutter-x) / -2); // stylelint-disable-line function-blacklist
+  margin-top: calc(var(--bs-gutter-y) * -1); // stylelint-disable-line function-disallowed-list
+  margin-right: calc(var(--bs-gutter-x) / -2); // stylelint-disable-line function-disallowed-list
+  margin-left: calc(var(--bs-gutter-x) / -2); // stylelint-disable-line function-disallowed-list
 }
 
 @mixin make-col-ready($gutter: $grid-gutter-width) {
@@ -21,8 +49,8 @@
   flex-shrink: 0;
   width: 100%;
   max-width: 100%; // Prevent `.col-auto`, `.col` (& responsive variants) from breaking out the grid
-  padding-right: calc(var(--bs-gutter-x) / 2); // stylelint-disable-line function-blacklist
-  padding-left: calc(var(--bs-gutter-x) / 2); // stylelint-disable-line function-blacklist
+  padding-right: calc(var(--bs-gutter-x) / 2); // stylelint-disable-line function-disallowed-list
+  padding-left: calc(var(--bs-gutter-x) / 2); // stylelint-disable-line function-disallowed-list
   margin-top: var(--bs-gutter-y);
 }
 
@@ -47,7 +75,7 @@
 // numberof columns. Supports wrapping to new lines, but does not do a Masonry
 // style grid.
 @mixin row-cols($count) {
-  & > * {
+  > * {
     flex: 0 0 auto;
     width: 100% / $count;
   }
