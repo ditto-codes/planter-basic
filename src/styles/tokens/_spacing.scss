@@ -30,3 +30,14 @@ $spacer-5:  $spacer * 4;    // 32px
 $spacer-6:  $spacer * 6;    // 48px
 $spacer-7:  $spacer * 8;    // 64px
 $spacer-8:  $spacer * 9;    // 72px
+
+$spacer-size-map: (
+  xs: $spacer-1,
+  sm: $spacer-2,
+  md: $spacer-3,
+  lg: $spacer-4,
+  xl: $spacer-5,
+  xxl: $spacer-6,
+  massive: $spacer-7,
+  super: $spacer-8
+);

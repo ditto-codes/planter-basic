@@ -1,0 +1,36 @@
+/*
+  
+  FUNCTIONS
+  
+  Global Sass functions
+  
+  
+*/
+
+@use "sass:list";
+
+// SPACING
+// ────────────────────────────────────
+
+// Mulitply the `spacer` token by the passed value
+@function space($_sizes) {
+  // Convert argument to string, so we can convert it to a List
+  $str: #{$_sizes};
+  $size-list: str-to-list($str);
+
+  $sizes: ();
+  @each $size in $size-list {
+    @if map-has-key($spacer-size-map, $size) {
+      $sizes: list.append($sizes, map-get($spacer-size-map, $size));
+    }
+    @else {
+      $sizes: list.append(calc(#{$spacer} * #{$size}));
+    }
+  }
+  @return #{$sizes};
+}
+
+// Alias wrapper for `space` function
+@function sp($multipliers...) {
+  @return space($multipliers...);
+}
