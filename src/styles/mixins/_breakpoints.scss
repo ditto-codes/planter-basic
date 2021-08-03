@@ -15,50 +15,120 @@ Example Usage:
 // https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
 // https://adrianmanduc.medium.com/how-to-create-a-scss-mixin-for-responsive-design-8aad4f70f1d5
 
+@use "sass:list";
 
-@mixin breakpoint($breakpoint, $direction: min) {
+// min, max, between
+@mixin breakpoint($breakpoint, $direction: up) {
 
-  //check if the supplied breakpoint exists in our breakpoits map
+  //check if the supplied breakpoint exists in our breakpoints map
   @if map-has-key($breakpoints, $breakpoint) {
-    $breakpoint-values: map-get($breakpoints, $breakpoint);
-    $breakpoint-min: map-get($breakpoint-values, min);
-    $breakpoint-max: map-get($breakpoint-values, max);
-
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
     //check if we are writing styles for larger or smaller screens
-    @if $direction==min {
-      @media (min-width: $breakpoint-min) {
+    @if $direction == min or $direction == up {
+      @media (min-width: $breakpoint-value) {
         @content;
       }
     }
-
     @else {
+      $breakpoint-max: $breakpoint-value - .02;
       @media (max-width: $breakpoint-max) {
         @content;
       }
     }
-
-    // use the custom value if the breakpoint is not part of the pre-defined list
   }
 
+  // Value is not a defined breakpoint, but use it in a media query anyway
+  // Requires unit
   @else {
-
-    @if $direction==min {
+    @if $direction == min or $direction == up {
       @media (min-width: $breakpoint) {
         @content;
       }
     }
-
     @else {
-      @media (max-width: $breakpoint) {
+      $breakpoint-max: $breakpoint - .02;
+      @media (max-width: $breakpoint-max) {
         @content;
       }
     }
   }
 }
 
-// Wrappers
-@mixin bp-above {}
-@mixin bp-below {}
-@mixin bp {
-  @include bp-above {}
-} // default direction
+@mixin breakpoint-between($lower, $upper) {
+  $min: if(map-has-key($breakpoints, $lower), map-get($breakpoints, $lower), null);
+  $max: if(map-has-key($breakpoints, $upper), map-get($breakpoints, $upper), null);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include breakpoint($lower, min) {
+      @content;
+    }
+  } @else if $min == null {
+    @include breakpoint($upper, max) {
+      @content;
+    }
+  }
+}
+
+// Wrappers 
+
+// up-down syntax
+@mixin bp-up($breakpoint) {
+  @include breakpoint($breakpoint, min) { 
+    @content;
+  }
+}
+@mixin bp-down {
+  @include breakpoint($breakpoint, max) { 
+    @content;
+  }
+}
+// min-max syntax
+@mixin bp-min($breakpoint) {
+  @include breakpoint($breakpoint, min) { 
+    @content;
+  }
+}
+@mixin bp-max($breakpoint) {
+  @include breakpoint($breakpoint, max) { 
+    @content;
+  }
+}
+
+@mixin bp-between($lower, $upper) {
+  @include breakpoint-between($lower, $upper) { 
+    @content;
+  }
+}
+// Arbitrary
+@mixin bp($args...) {
+  $numArgs: length($args);
+  @if $numArgs > 3 {
+    @error 'Too many arguments';
+  }
+  @else if $numArgs == 3 {
+    $direction: list.nth($args, 3);
+    @if $direction == between {
+      @include breakpoint-between(list.nth($arg, 1), list.nth($arg, 2)) { 
+        @content;
+      }
+    }
+  }
+  @else if $numArgs == 2 {
+    @include breakpoint(list.nth($arg, 1), list.nth($arg, 2)) { 
+      @content;
+    }
+  }
+  @else if $numArgs == 1 {
+    @include breakpoint(list.nth($arg, 1)) { 
+      @content;
+    }
+  }
+  @else {
+    @error 'Not enough arguments (0)';
+    @content;
+  }
+}

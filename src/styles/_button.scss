@@ -1,0 +1,162 @@
+/*
+  
+  BUTTON
+  
+  Styles for a button element.
+
+  Sizes:
+  - Small
+  - Default
+  - Large
+  - Block (Fluid)
+
+  Kinds:
+  - Button
+  - Button Ghost
+  - Button Text
+  
+*/
+
+.btn {
+  // Theme
+  $color: $canvas;
+  $bg-color: $blue;
+  $border: $border-width solid transparent;
+  $hover-bg-color: $blue-500;
+  $active-bg-color: $blue-600;
+  $focus-outline: 2px solid $purple;
+  $disabled-bg-color: $gray-100;
+
+  color: $color;
+  background-color: $bg-color;
+  border: $border;
+  border-radius: $border-radius;
+  padding: 10px 26px;
+  outline: 0;
+  transition: background-color $animate-faster;
+
+  &:hover {
+    background-color: $hover-bg-color;
+    color: $color;
+  }
+
+  &:active {
+    background-color: $active-bg-color;
+  }
+
+  &:focus {
+    border: $border;
+    outline-offset: 2px;
+    outline: $focus-outline;
+  }
+
+  &.btn-disabled {
+    background-color: $disabled-bg-color;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: $disabled-bg-color;
+      color: $color;
+    }
+  }
+}
+
+// Sizes
+.btn-small {
+  padding: 5px 11px;
+}
+
+.btn-large {
+  padding: 18px 42px;
+}
+
+.btn-block {
+  padding: 18px;
+  width: 100%;
+}
+
+// Kinds
+.btn-ghost {
+  // Theme
+  $color: $blue;
+  $bg-color: transparent;
+  $border: 1px solid $blue;
+  $hover-color: $blue-500;
+  $hover-border: 1px solid $blue-500;
+  $hover-bg-color: $blue-100;
+  $active-bg-color: $blue-200;
+  $disabled-color: $gray-100;
+  $focus-border: 1px solid $blue;
+  $disabled-border: 1px solid $gray-100;
+
+  border: $border;
+  color: $color;
+  background-color: transparent;
+  padding: 10px 26px;
+
+  &:hover {
+    border: $hover-border;
+    color: $hover-color;
+    background-color: $hover-bg-color;
+  }
+
+  &:active {
+    background-color: $active-bg-color;
+  }
+
+  &:focus {
+    border: $focus-border;
+    outline-offset: 2px;
+  }
+
+  &.btn-disabled {
+    border: $disabled-border;
+    color: $disabled-color;
+    cursor: not-allowed;
+
+    &:hover {
+      border: $disabled-border;
+      color: $disabled-color;
+      background-color: transparent;
+    }
+  }
+
+}
+
+.btn-text {
+  // Theme
+  $color: $blue;
+  $hover-bg-color: $blue-100;
+  $active-bg-color: $blue-200;
+  $focus-border: 1px solid transparent;
+  $focus-outline: 2px solid $purple;
+  $disabled-color: $gray-100;
+  
+  background-color: transparent;
+  color: $color;
+
+  &:hover {
+    background-color: $hover-bg-color;
+    color: $color;
+  }
+
+  &:active {
+    background-color: $active-bg-color;
+  }
+
+  &:focus {
+    border: $focus-border;
+    outline-offset: 2px;
+    outline: $focus-outline;
+  }
+
+  &.btn-disabled {
+    color: $disabled-color;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: transparent;
+      color: $disabled-color;
+    }
+  }
+}

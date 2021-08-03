@@ -2,21 +2,7 @@
 
   SPACING
 
-  Tokens + Functions
-
-  Set a base spacer and then modify it via the space function.
-
-  $spacer: 1rem
-
-  .my-custom-class {
-    padding: space(1) space(2); -> padding: 8px 16px
-  }
-
-  .my-other-class {
-    padding: sp(.5) sp(1); -> padding: 4px 8px
-  }
-
-  NOTE: See presets below the function.
+  Tokens that are used in _functions.scss
 
 */
 

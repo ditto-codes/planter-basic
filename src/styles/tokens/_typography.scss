@@ -101,7 +101,7 @@ $lead-font-weight:            $font-weight-200;
 // Text links
 
 $link-color:                    $blue !default;
-$link-font-weight:              500 !default;
+$link-font-weight:              null !default;
 $link-decoration:               underline !default;
 $link-hover-color:              $blue-700 !default;
 $link-hover-background-color:   $cyan-100 !default;

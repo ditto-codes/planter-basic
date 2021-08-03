@@ -1,0 +1,44 @@
+
+.input {
+  // Theme
+  $color: $black;
+  $placeholder-color: $gray-300;
+  $bg-color: $canvas;
+  $border-bottom-color: $gray-300;
+  $focus-border: $border-width solid $purple;
+  $invalid-border: $border-width solid $red;
+  $disabled-color: $gray-100;
+  $disabled-border-bottom: $border-width solid $gray-100;
+  
+  color: $color;
+  background-color: $bg-color;
+  padding: 10px 14px;
+  // FIX: can see bottom border radius holes during 'open' state
+  border-radius: $border-radius;
+  border: $border-width solid transparent;
+  border-bottom-color: $border-bottom-color;
+  outline: 0;
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
+  // States
+  &:focus {
+    border: $focus-border;
+  }
+
+  &:invalid {
+    border: $invalid-border;
+  }
+
+  &:disabled {
+    color: $disabled-color;
+    border-bottom: $disabled-border-bottom;
+    cursor: not-allowed;
+  }
+}
+
+.input-block {
+  width: 100%;
+}

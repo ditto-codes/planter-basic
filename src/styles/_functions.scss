@@ -12,6 +12,24 @@
 // SPACING
 // ────────────────────────────────────
 
+/* 
+
+  Set a base spacer and then modify it via the space function.
+
+  $spacer: 1rem
+
+  .my-custom-class {
+    padding: space(1) space(2); -> padding: 8px 16px
+  }
+
+  .my-other-class {
+    padding: sp(.5) sp(1); -> padding: 4px 8px
+  }
+
+  NOTE: See presets below the function.
+
+*/
+
 // Mulitply the `spacer` token by the passed value
 @function space($_sizes) {
   // Convert argument to string, so we can convert it to a List

@@ -1,8 +1,0 @@
-@import '../spacing'; // dependency of grid.scss
-@import '../grid';
-
-:export {
-  @each $key, $value in $grid-breakpoints { 
-    #{$key}: #{$value}; 
-  }
-}
