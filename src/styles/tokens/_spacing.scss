@@ -2,11 +2,11 @@
 
   SPACING
 
-  Tokens that are used in _functions.scss
+  Tokens that are used for `spacer()` sass function
 
 */
 
-$spacer: .5rem !default;
+$spacer: .5rem !default;    // 8px
 
 $spacer-1:  $spacer * .5;   // 4px
 $spacer-2:  $spacer * 1;    // 8px

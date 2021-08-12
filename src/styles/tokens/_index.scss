@@ -2,13 +2,7 @@
 
   TOKENS
 
-  Some description that can span multiple lines. This method lets the
-	comments read more like an actual block of text.
-
-	General documentation notes that apply to the entire file could be
-  here, instead of as inline comments.
-
-  // TODO: Docs
+  Import token files
 
 */
 
@@ -22,8 +16,3 @@
 @import 'breakpoints';
 @import 'animations';
 @import 'grid';
-
-// FIXME: integrate the tokens within this file into the ones above
-// Necesary for some tokens
-@import '../vendor/bootstrap/functions';
-@import 'twbs';

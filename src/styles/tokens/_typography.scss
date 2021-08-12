@@ -85,10 +85,9 @@ $display-color:               null !default;
 $display-text-transform:      null !default;
 $display-margin-bottom:       $spacer-2 !default;
 
-// TODO: MAYBE add more
-$d1-font-size:                4.75rem !default;
-$d2-font-size:                3.75rem !default;
-$d3-font-size:                3.25rem !default;
+$d1-font-size:                6rem !default;
+$d2-font-size:                4.75rem !default;
+$d3-font-size:                3.75rem !default;
 
 // LEAD PARAGRAPHS
 // ────────────────────────────────────
@@ -110,7 +109,7 @@ $link-hover-decoration:         null !default;
 // SMALL
 // ────────────────────────────────────
 
-$small-font-size:               0.875rem !default;
+$small-font-size:               0.8125rem !default;
 $small-font-weight:             $font-weight-500 !default;
 $small-font-style:              null !default;
 $small-text-transform:          uppercase !default;
@@ -119,6 +118,5 @@ $small-text-transform:          uppercase !default;
 // ────────────────────────────────────
 // Selected text, aka highlighted text
 
-// TODO: add selector that uses this in _base.scss
 $highlight-bg:                null !default;
 $highlight-fg:                null !default;

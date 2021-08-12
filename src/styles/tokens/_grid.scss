@@ -1,26 +1,25 @@
 /* 
 
-  GRID COLUMNS
+  GRID
 
-  Set the number of columns and specify the width of the gutters.
-
-  Enable grid class generation in your output
-  (e.g. .container, .row, .col classes)
+  Tokens for the flexbox grid (row, col, container)
 
 */
 
+// Enable grid class generation in your output
+// (e.g. .container, .row, .col classes)
 $enable-grid-classes: false;
 
+// Rows and Cols
 $grid-columns:                12 !default;
-$grid-gutter-width:           1.5rem !default;
 $grid-row-columns:            6 !default;
 
-$gutters: $spacers !default;
+// Gutter
+$grid-gutter-width:           1.5rem !default;
+$gutters: $spacer-size-map !default;
 
-// Container padding
-
+// Containers
 $container-padding-x: 1rem !default;
-
 $container-max-widths: (
   sm: 540px,
   md: 720px,

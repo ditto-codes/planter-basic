@@ -4,12 +4,20 @@
   
   Define your "base" styles here that are used across your project,
   and implement design tokens
+
+  Contents:
+    - Global
+    - Root
+    - Body
+    - Typography
+    - Links (Text)
   
 */
 
 // GLOBAL
 // ────────────────────────────────────
 // Normalize elements so that `width` is not affected by `padding` or `border`
+
 *,
 *::before,
 *::after {
@@ -70,28 +78,28 @@ body {
 }
 
 h1 {
-  @include font-size($h1-font-size);
   @extend %heading;
+  @include font-size($h1-font-size);
 }
 h2 {
-  @include font-size($h2-font-size);
   @extend %heading;
+  @include font-size($h2-font-size);
 }
 h3 {
-  @include font-size($h3-font-size);
   @extend %heading;
+  @include font-size($h3-font-size);
 }
 h4 {
-  @include font-size($h4-font-size);
   @extend %heading;
+  @include font-size($h4-font-size);
 }
 h5 {
-  @include font-size($h5-font-size);
   @extend %heading;
+  @include font-size($h5-font-size);
 }
 h6 {
-  @include font-size($h6-font-size);
   @extend %heading;
+  @include font-size($h6-font-size);
 }
 .h1 { @extend h1; }
 .h2 { @extend h2; }
@@ -143,6 +151,11 @@ small,
   text-transform: $small-text-transform;
 }
 
+b,
+strong {
+  font-weight: $font-weight-700;
+}
+
 // LINKS (TEXT)
 // ────────────────────────────────────
 
@@ -164,27 +177,4 @@ a:not([href]):not([class]) {
     color: inherit;
     text-decoration: none;
   }
-}
-
-// STRONG
-// ────────────────────────────────────
-// Add the correct font weight in Chrome, Edge, and Safari
-
-b,
-strong {
-  font-weight: $font-weight-700;
-}
-
-// FIGURE
-// ────────────────────────────────────
-
-figure {
-  margin: 0;
-}
-
-// LISTS
-// ────────────────────────────────────
-
-ul {
-  padding-left: 2rem;
 }

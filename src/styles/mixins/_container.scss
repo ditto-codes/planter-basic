@@ -1,4 +1,8 @@
 /*
+  CONTAINER
+
+  Container mixin. 
+
   Bootstrap 5.0.0
   Source: https://github.com/twbs/bootstrap/blob/bf0936748602c8109fd916c64b4560799fa1c3f8/scss/mixins/_container.scss
 
@@ -25,10 +29,6 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-
-
-// Container mixins
-// twbs credit
 
 @mixin make-container($gutter: $container-padding-x) {
   width: 100%;

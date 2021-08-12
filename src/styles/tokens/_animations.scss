@@ -6,8 +6,13 @@
 
 */
 
-$animate-slower: 1400ms; //Intro, Long Loading, Emphasis
-$animate-slow: 700ms; //Dimming, Loading
-$animate-standard: 200ms; //Expansions, Short Movements
-$animate-fast: 120ms; //Micro Interactions
-$animate-faster: 70ms; //Toggles, Buttons, Links
+// e.g., Intro, Long Loading, Emphasis
+$animate-slower: 1400ms; 
+// e.g., Dimming, Loading
+$animate-slow: 700ms; 
+// e.g., Expansions, Short Movements
+$animate-standard: 200ms; 
+// e.g., Micro Interactions
+$animate-fast: 120ms; 
+// e.g., Toggles, Buttons, Links
+$animate-faster: 70ms; 

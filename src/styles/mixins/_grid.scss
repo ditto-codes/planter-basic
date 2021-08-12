@@ -1,4 +1,9 @@
 /*
+
+  GRID
+
+  Grid mixins (Flexbox)
+
   Bootstrap 5.0.0
   Source: https://github.com/twbs/bootstrap/blob/c30b6df54bcaffa52a5e9f4bf117aa5dcd7b7a7e/scss/mixins/_grid.scss
 
@@ -24,6 +29,7 @@
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
+
 */
 
 /// Grid system
@@ -74,6 +80,7 @@
 // Specify on a parent element(e.g., .row) to force immediate children into NN
 // numberof columns. Supports wrapping to new lines, but does not do a Masonry
 // style grid.
+
 @mixin row-cols($count) {
   > * {
     flex: 0 0 auto;

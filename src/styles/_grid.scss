@@ -1,4 +1,9 @@
 /*
+
+  GRID
+
+  Use grid mixins to generate grid classes (Flexbox).
+
   Bootstrap 5.0.0
   Sources: 
     - https://github.com/twbs/bootstrap/blob/bf0936748602c8109fd916c64b4560799fa1c3f8/scss/_grid.scss
@@ -28,18 +33,7 @@
   THE SOFTWARE.
 */
 
-
-/* 
-
-  ROW
-  Rows contain your columns.
-
-  <div class="row">
-    <div class="container"></div>
-  </div>
-
-*/
-
+// Row classes
 @if $enable-grid-classes {
   .row {
     @include make-row();
@@ -50,30 +44,12 @@
   }
 }
 
-
-/*
-
-  COLUMNS
-  Common styles for small and large grid columns
-
-*/
-
+// Column classes
 @if $enable-grid-classes {
   @include make-grid-columns();
 }
 
-
-/*
-
-  CONTAINERS
-  Set the container width, and override it for fixed navbars in media queries.
-
-  <div class="container"></div>
-  <div class="container-fluid"></div>
-  <div class="container-{$breakpoint}"</div>
-
-*/
-
+// Container classes
 @if $enable-grid-classes {
   // Single container class with breakpoint max-widths
   .container,
