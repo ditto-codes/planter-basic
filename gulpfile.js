@@ -135,7 +135,7 @@ function styles() {
   let streams = [];
 
   for (let input of inputs) {
-    streams.push(gulp.src(input, { since: gulp.lastRun(styles) })
+    streams.push(gulp.src(input)
       .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(dependents())
@@ -188,7 +188,7 @@ function html() {
   // Create link tags for output CSS
   for (let input of config.styles.input) {
     let basename = input.split('/').pop().split('.')[0];
-    css += `<link src="${config.build.assetsDir}/${basename}${infix}.css" rel="stylesheet">\n`;
+    css += `<link href="${config.build.assetsDir}/${basename}${infix}.css" rel="stylesheet">\n`;
   }
   // Create script tags for output JS
   for (let input of config.js.input) {
