@@ -34,6 +34,7 @@
   padding: 10px 26px;
   outline: 0;
   transition: background-color $animate-faster;
+  text-decoration: none;
 
   &:hover {
     background-color: $hover-bg-color;

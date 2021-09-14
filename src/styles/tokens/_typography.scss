@@ -44,7 +44,7 @@ $font-weight-600:             600 !default; // Semi Bold
 $font-weight-700:             700 !default; // Bold
 $font-weight-800:             800 !default; // Extra Bold
 $font-weight-900:             900 !default; // Black
-$font-weight-base:            $font-weight-regular !default;
+$font-weight-base:            null !default;
 
 // BODY
 $body-font-color:             $black !default;
@@ -59,7 +59,7 @@ $line-height-lg:              1.6 !default;
 // ────────────────────────────────────
 // Note: values set to `null` will inherit from root styles applied to body
 
-$heading-font-family:         $font-family-monospace !default;
+$heading-font-family:         $font-family-sans-serif !default;
 $heading-font-weight:         $font-weight-700 !default;
 $heading-font-style:          null !default;
 $heading-line-height:         $line-height-base !default;
@@ -77,8 +77,8 @@ $h6-font-size:                1rem !default;
 // DISPLAY HEADINGS
 // ────────────────────────────────────
 
-$display-font-family:         $font-family-monospace !default;
-$display-font-weight:         $font-weight-400 !default;
+$display-font-family:         $font-family-sans-serif !default;
+$display-font-weight:         $font-weight-500 !default;
 $display-font-style:          null !default;
 $display-line-height:         $line-height-base !default;
 $display-color:               null !default;
@@ -110,7 +110,7 @@ $link-hover-decoration:         null !default;
 // ────────────────────────────────────
 
 $small-font-size:               0.8125rem !default;
-$small-font-weight:             $font-weight-500 !default;
+$small-font-weight:             600 !default;
 $small-font-style:              null !default;
 $small-text-transform:          uppercase !default;
 

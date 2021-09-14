@@ -69,14 +69,6 @@ $magenta-500: mix($magenta, $shade, 75%) !default;
 $magenta-600: mix($magenta, $shade, 50%) !default;
 $magenta-700: mix($magenta, $shade, 25%) !default;
 
-$pink-100: mix($pink, $tint, 25%)  !default;
-$pink-200: mix($pink, $tint, 50%)  !default;
-$pink-300: mix($pink, $tint, 75%)  !default;
-$pink-400: $pink                   !default;
-$pink-500: mix($pink, $shade, 75%) !default;
-$pink-600: mix($pink, $shade, 50%) !default;
-$pink-700: mix($pink, $shade, 25%) !default;
-
 $red-100: mix($red, $tint, 25%)  !default;
 $red-200: mix($red, $tint, 50%)  !default;
 $red-300: mix($red, $tint, 75%)  !default;

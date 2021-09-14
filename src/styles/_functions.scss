@@ -19,16 +19,19 @@
 // 
 @function space($_sizes) {
   // Convert argument to string, so we can convert it to a List
-  $str: #{$_sizes};
-  $size-list: str-to-list($str);
+  // $str: #{$_sizes};
+  // $size-list: str-to-list($str);
 
   $sizes: ();
-  @each $size in $size-list {
+  @each $size in $_sizes {
+    @debug $_sizes;
+    @debug $size;
+
     @if map-has-key($spacer-size-map, $size) {
       $sizes: list.append($sizes, map-get($spacer-size-map, $size));
     }
     @else {
-      $sizes: list.append(calc(#{$spacer} * #{$size}));
+      $sizes: list.append($sizes, calc(#{$spacer} * #{$size}));
     }
   }
   @return #{$sizes};

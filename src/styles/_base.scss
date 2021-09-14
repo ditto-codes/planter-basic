@@ -48,7 +48,7 @@ body {
   line-height: $line-height-base;
   color: $body-font-color;
   text-align: $body-text-align;
-  background-color: $body-bg; // 1
+  background-color: $white; // 1
   -webkit-text-size-adjust: 100%; // 2
   -webkit-tap-highlight-color: rgba($black, 0); // 3
 
@@ -161,7 +161,6 @@ strong {
 
 a {
   color: $link-color;
-  font-weight: $link-font-color;
   text-decoration: $link-decoration;
 
   &:hover {
