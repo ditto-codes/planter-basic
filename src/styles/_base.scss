@@ -73,10 +73,6 @@ body {
   letter-spacing: 1px;
 }
 
-.heading {
-  @extend %heading;
-}
-
 h1 {
   @extend %heading;
   @include font-size($h1-font-size);

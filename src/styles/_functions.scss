@@ -24,9 +24,6 @@
 
   $sizes: ();
   @each $size in $_sizes {
-    @debug $_sizes;
-    @debug $size;
-
     @if map-has-key($spacer-size-map, $size) {
       $sizes: list.append($sizes, map-get($spacer-size-map, $size));
     }

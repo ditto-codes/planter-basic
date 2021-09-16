@@ -267,7 +267,8 @@ function serve() {
   let browserSync_options = {
     server: {
       baseDir: [dir],
-    }, 
+    },
+    ghostMode: false,
     ...config.dev 
   };
 

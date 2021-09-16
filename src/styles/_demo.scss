@@ -16,64 +16,197 @@
 }
 
 
-.section {
+// from mia's proj
+
+section {
   margin: 10%;
+  display: grid;
+  grid-template-columns: 1fr 80%;
+  column-gap: sp(5);
+  row-gap: sp(lg);
+  grid-auto-rows: min-content;
+  grid-template-areas: 
+    "heading content";
+
   & > h1 {
     font-size: 2rem;
     border-bottom: 5px solid $gray-100;
     padding-bottom: sp(md);
     margin-bottom: sp(massive);
+    grid-column-start: heading;
+    grid-column-end: content;
   }
 
-}
 
-.subsection {
-
-}
-
-.divider {
-  width: calc(75% - #{sp(5)});
-  float: right;
-  color: $gray-100;
-  height: 1px;
-  background-color: $gray-100;
-  margin: sp(5) 0 sp(massive);
-  // border-bottom: 1px solid $gray-100;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-bottom: sp(lg);
-  &-align-top {
-    align-items: flex-start;
-  }
-  .subsection-title, .item-title {
-    font-size: $small-font-size;
-    font-family: $font-family-monospace;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-  .subsection-title { 
-    float: left;
-    color: $gray-400;
-    margin-bottom: 0;
-  }
-  .item-info {
-    color: $gray-200;
-    flex: 1;
-    .item-title {
-      float: right;
+  // Left Column
+  .heading {
+    grid-column-start: heading;
+    grid-column-end: heading;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > h2, & > h3 {
+      font-size: $small-font-size;
+      font-family: $font-family-monospace;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $gray-400;
+      margin-bottom: 0;
+    }
+    h3 {
+      margin-left: auto;
+      color: $gray-200;
+    }
+    &.align-top {
+      align-items: baseline;
     }
   }
-  .example {
-    padding-left: sp(5);
-    width: 75%;
-    & > * { 
+
+  // Right Column
+  .content {
+    grid-column-start: content;
+    grid-column-end: content;
+    align-self: start;
+    & > * {
       display: block;
-      margin: 0; 
+      margin-bottom: 0;
     }
+  }
+
+  .divider {
+    @extend .content;
+    color: $gray-100;
+    height: 1px;
+    background-color: $gray-100;
+    margin: sp(5) 0;
+
   }
 }
 
+.color-items {
+  display: flex !important;
+  flex-wrap: wrap;
+  row-gap: sp(lg);
+  // flex-direction: column;
+  // flex: 1 1 1;
+}
+
+.color-item {
+  padding: 0 sp(sm);
+  min-width: 33.3333333%;
+  flex-grow: 1;
+}
+
+.color-examples {
+
+}
+
+.color-block {
+  height: 140px;
+  margin-bottom: sp(md);
+  color: $white;
+  width: 100%;
+}
+
+.color-variants {
+  height: 140px;
+  display: flex;
+}
+
+.color-variant {
+  font-family: $font-family-monospace;
+  font-size: .875rem;
+  text-align: center;
+  height: 100%;
+  flex: 1;
+  color: $white;
+  padding: sp(1.5);
+}
+
+.color-dark {
+  color: $black;
+}
+
+// MAIN
+// Blue, Purple, Magenta, Red, Orange, Yellow, Green, Cyan
+
+.color-blue {
+
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $blue-400;
+  }
+
+  &.color-hex {
+    color: $blue-100;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $blue-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $blue-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $blue-300;  
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $blue-400;  
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $blue-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $blue-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $blue-700;  
+  }
+}
+
+// MONOCHROME
+// Dark Gray, Gray, Black, Canvas
+
+.color-dark-gray {
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $dark-gray-400;
+  }
+
+  &.color-hex {
+    color: $dark-gray-100;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $dark-gray-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $dark-gray-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $dark-gray-300;  
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $dark-gray-400;  
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $dark-gray-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $dark-gray-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $dark-gray-700;  
+  }
+}
+
+
+// THEME
+// Primary(Blue), Secondary(Gray), Info(Cyan)
+// Success(Green), Warning(Yellow), Danger(Red)
+// Light (Gray-100), Dark(Gray-600)
