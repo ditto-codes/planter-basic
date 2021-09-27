@@ -10,6 +10,7 @@ module.exports = {
   dev: {
     port: 5000,
     open: false,
+    ghostMode: false,
   },
   js: {
     input: ['js/main.js', 'js/howdy.js']

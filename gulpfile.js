@@ -253,9 +253,9 @@ function watch() {
 
   gulp.watch(`${config.static}/*`, options, static)
     .on('change', browserSync.reload);
-  
+    
   gulp.watch(`${config.src}/${dir(config.html.dir)}**/*.html`, options, html)
-    .on('change', ()=> browserSync.reload);
+    .on('change', browserSync.reload);
 
 }
 
@@ -268,7 +268,6 @@ function serve() {
     server: {
       baseDir: [dir],
     },
-    ghostMode: false,
     ...config.dev 
   };
 
