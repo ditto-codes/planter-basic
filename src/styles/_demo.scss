@@ -19,7 +19,7 @@
 // from mia's proj
 
 section {
-  margin: 10%;
+  margin: 4%;
   display: grid;
   grid-template-columns: 1fr 80%;
   column-gap: sp(5);
@@ -27,6 +27,10 @@ section {
   grid-auto-rows: min-content;
   grid-template-areas: 
     "heading content";
+
+  @include bp-up(1600px) {
+    margin: 8%;
+  }
 
   & > h1 {
     font-size: 2rem;
@@ -95,7 +99,10 @@ section {
 .color-item {
   padding: 0 sp(sm);
   min-width: 33.3333333%;
-  flex-grow: 1;
+  @include bp-up(xl) {
+    flex-grow: 1;
+    max-width: 33.3333333%;
+  }
 }
 
 .color-examples {
@@ -116,12 +123,12 @@ section {
 
 .color-variant {
   font-family: $font-family-monospace;
-  font-size: .875rem;
+  font-size: .825rem;
   text-align: center;
   height: 100%;
   flex: 1;
   color: $white;
-  padding: sp(1.5);
+  padding: sp(1);
 }
 
 .color-dark {
@@ -167,6 +174,264 @@ section {
   }
 }
 
+.color-purple {
+
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $purple-400;
+  }
+
+  &.color-hex {
+    color: $purple-100;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $purple-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $purple-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $purple-300;  
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $purple-400;  
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $purple-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $purple-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $purple-700;  
+  }
+}
+
+.color-magenta {
+
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $magenta-400;
+  }
+
+  &.color-hex {
+    color: $magenta-100;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $magenta-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $magenta-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $magenta-300;  
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $magenta-400;  
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $magenta-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $magenta-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $magenta-700;  
+  }
+}
+
+.color-red {
+
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $red-400;
+  }
+
+  &.color-hex {
+    color: $red-100;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $red-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $red-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $red-300;  
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $red-400;  
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $red-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $red-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $red-700;  
+  }
+}
+
+.color-orange {
+
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $orange-400;
+  }
+
+  &.color-hex {
+    color: $orange-100;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $orange-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $orange-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $orange-300;  
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $orange-400;  
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $orange-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $orange-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $orange-700;  
+  }
+}
+
+.color-yellow {
+
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $yellow-400;
+    color: $black;
+  }
+
+  &.color-hex {
+    color: $yellow-700;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $yellow-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $yellow-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $yellow-300;  
+    color: $black;
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $yellow-400;  
+    color: $black;
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $yellow-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $yellow-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $yellow-700;  
+  }
+}
+
+.color-cyan {
+
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $cyan-400;
+    color: $black;
+  }
+
+  &.color-hex {
+    color: $cyan-700;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $cyan-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $cyan-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $cyan-300;  
+    color: $black;
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $cyan-400;  
+    color: $black;
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $cyan-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $cyan-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $cyan-700;  
+  }
+}
+
+.color-green {
+
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $green-400;
+  }
+
+  &.color-hex {
+    color: $green-100;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $green-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $green-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $green-300;  
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $green-400;  
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $green-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $green-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $green-700;  
+  }
+}
+
 // MONOCHROME
 // Dark Gray, Gray, Black, Canvas
 
@@ -205,8 +470,66 @@ section {
   }
 }
 
+.color-gray {
+  &.color-block {
+    padding: sp(1.5);
+    background-color: $gray-400;
+  }
+
+  &.color-hex {
+    color: $gray-100;
+  }
+
+  .color-variant:nth-of-type(1) { 
+    background-color: $gray-100; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(2) { 
+    background-color: $gray-200; 
+    color: $black;
+  }
+  .color-variant:nth-of-type(3) {
+    background-color: $gray-300;  
+  }
+  .color-variant:nth-of-type(4) {
+    background-color: $gray-400;  
+  }
+  .color-variant:nth-of-type(5) {
+    background-color: $gray-500;  
+  }
+  .color-variant:nth-of-type(6) {
+    background-color: $gray-600;  
+  }
+  .color-variant:nth-of-type(7) {
+    background-color: $gray-700;  
+  }
+}
+
 
 // THEME
 // Primary(Blue), Secondary(Gray), Info(Cyan)
 // Success(Green), Warning(Yellow), Danger(Red)
 // Light (Gray-100), Dark(Gray-600)
+
+.color-theme-items {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+.color-theme-item {
+  flex-grow: 1;
+  min-width: 33.3333333%;
+  // max-width: 33.3333333%;
+  padding: 0 sp(sm);
+}
+.color-theme-title {
+  padding: sp(.5);
+  &.color-block {
+    height: auto;
+  }
+}
+
+.color-light-gray {
+  color: $black;
+  background-color: $gray-100;
+  padding: sp(1.5);
+}

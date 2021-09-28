@@ -94,7 +94,7 @@
     @content;
   }
 }
-@mixin bp-down {
+@mixin bp-down($breakpoint) {
   @include breakpoint($breakpoint, max) { 
     @content;
   }

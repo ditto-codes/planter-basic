@@ -14,15 +14,14 @@
 // COLORS
 // ────────────────────────────────────
 
-$blue: #5360f0;
-$red: #d02828;
+$blue: #515ff0;
+$purple: #8953f0;
 $magenta: #f053f0;
-$cyan: #1de0f2;
-$green: #5a965e;
+$red: #f05151;
 $orange: #f0a853;
 $yellow: #f0d853;
-$light-red: #f05353;
-$purple: #8953f0;
+$green: #5a965e;
+$cyan: #1de0f2;
 $canvas: #f5f5f5;
 
 // Grays (mixed with $shade-dark for variants)
@@ -76,14 +75,6 @@ $red-400: $red                   !default;
 $red-500: mix($red, $shade, 75%) !default;
 $red-600: mix($red, $shade, 50%) !default;
 $red-700: mix($red, $shade, 25%) !default;
-
-$light-red-100: mix($light-red, $tint, 25%)  !default;
-$light-red-200: mix($light-red, $tint, 50%)  !default;
-$light-red-300: mix($light-red, $tint, 75%)  !default;
-$light-red-400: $light-red                   !default;
-$light-red-500: mix($light-red, $shade, 75%) !default;
-$light-red-600: mix($light-red, $shade, 50%) !default;
-$light-red-700: mix($light-red, $shade, 25%) !default;
 
 $orange-100: mix($orange, $tint, 25%)  !default;
 $orange-200: mix($orange, $tint, 50%)  !default;
@@ -141,7 +132,7 @@ $secondary:     $gray !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
-$danger:        $light-red !default;
+$danger:        $red !default;
 $light:         $gray-200 !default;
 $dark:          $gray-600 !default;
 
