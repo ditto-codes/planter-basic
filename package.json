@@ -9,7 +9,8 @@
     "serve": "gulp serve",
     "serve:build": "gulp serve --build",
     "lint:js": "eslint --ext .js --fix \"src/\"",
-    "lint:css": "npx stylelint --fix \"src/\""
+    "lint:css": "npx stylelint --fix \"src/\"",
+    "clean": "gulp clean"
   },
   "author": "",
   "license": "0BSD",
