@@ -5,7 +5,7 @@ module.exports = {
     title: 'Planter',
   },
   placeholders: {
-    '%PLANTER_NAME%': 'Planter Basic',
+    '%TITLE%': 'Planter',
   },
   dev: {
     port: 5000,
