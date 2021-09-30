@@ -1,6 +1,5 @@
 # Getting Started
 
-## Overview
 Planter Basic is a web project starter that uses [`gulp`](https://gulpjs.com) and comes with starter styles built out with [`Sass`](https://sass-lang.com/). Basic is great for beginner web developers who are looking to take a step towards modern web development without jumping into a complex framework or library.
 
 <!-- callout -->
@@ -59,6 +58,11 @@ Use the flags `--dev` and `--build` to specify the mode to run the `serve` and `
 
 ## Project Structure
 
+### `index.html`
+<!-- TODO: talk about HTML file default placeholders (%CSS%, %JS%, %TITLE%) -->
+```html
+```
+
 ### `/src`
 The home for all your project code that will be watched and transformed by the `dev` and `build` scripts.
 
@@ -67,6 +71,8 @@ Static assets, such as images or external scripts. These files won't be procesed
 
 ### `/build`
 This directory will be generated when you run `npm run build` and will include all HTML, JS, CSS, and other static assets, ready for production. 
+
+
 
 ## Configuration
 The tasks and project structure of Planter Basic can be configured with `planter.config.js`. Check out the [Config docs](./config.md) for more details.
