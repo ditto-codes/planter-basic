@@ -188,6 +188,11 @@ $spacer-size-map: (
 }
 ```
 
+## Button
+`_button.scss`
+
+The only component styles included in Planter Basic are for Button, which serve as an example of how tokens can be used. The styles include a few button type and size variants, which are shown in `demo.html`.
+
 ## Grid
 `_grid.scss`
 

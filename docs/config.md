@@ -72,15 +72,39 @@ module.exports = {
   // Placeholder definitions to be used anywhere in your HTML
   // '%CSS%' and '%JS%' are internal placeholders that cannot be overridden
   placeholders: {
+    // Example (no default keys are set)
     '%TITLE%': 'Planter'
   },
 }
 ```
 
 ### Placeholders
-Placeholders are string variables that you can define in your `planter.config.js` to be replaced in your HTML files during the build task. 
+Placeholders are string variables that you can define in your `planter.config.js` to be replaced in your HTML files during the build task.
 
-For example, you can use a placeholder to alias paths. Assuming your config looks like this:
+
+#### Example: Page Title
+Planter Basic has `%TITLE%` defined by default as an example written into the `<head>`of `index.html`.
+```js
+module.exports = {
+  placeholders: {
+    '%TITLE%': 'My Cool Site',
+  },
+}
+```
+```html
+<!-- src/<page>.html -->
+<head>
+  <title>%TITLE%</title>
+</header>
+
+<!-- Output -->
+<head>
+  <title>My Cool Site</title>
+</header>
+```
+
+#### Example: Paths
+You can use a placeholder to alias paths assuming your config looks like this:
 ```js
 module.exports = {
   placeholders: {
@@ -90,13 +114,57 @@ module.exports = {
 ```
 You could use this placeholder across your HTML files:
 ```html
+<!-- src/<page>.html -->
 <img src="%images%/cow.png">
 <img src="%images%/pangolin.png">
 <img src="%images%/goat.png">
+
+<!-- Output -->
+<img src="./static/some/path/to/images/cow.png">
+<img src="./static/some/path/to/images/pangolin.png">
+<img src="./static/some/path/to/images/goat.png">
 ```
-<!-- only include the "doing more" if we end up showing a "component" example -->
-<!-- TODO: add doing more with placeholders link if applicable -->
-See our [Doing More with Placeholders](#) guide for some advanced usage of placeholders.
+
+#### Example: HTML Strings
+You can even use placeholders with HTML strings for simple templating.
+```js
+module.exports = {
+  placeholders: {
+    '%FOOTER%': `
+      <footer>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <div>&copy; 2021 Ditto Labs</div>
+      </footer>
+    `,
+  },
+}
+```
+
+Add the `%FOOTER%` placeholder to all your pages, rather than copying and pasting the code block.
+```html
+<!-- src/<page>.html -->
+<body>
+  <!-- some content... -->
+  %FOOTER%
+</body>
+
+<!-- Output -->
+<body>
+  <!-- some content... -->
+  <footer>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div>&copy; 2021 Ditto Labs</div>
+  </footer>
+</body>
+```
 
 ## `gulpfile.js`
 

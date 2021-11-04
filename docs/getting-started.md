@@ -58,9 +58,19 @@ Use the flags `--dev` and `--build` to specify the mode to run the `serve` and `
 
 ## Project Structure
 
-### `index.html`
+### Pages
 <!-- TODO: talk about HTML file default placeholders (%CSS%, %JS%, %TITLE%) -->
+Any `.html` file at the root of `/src` will be treated as a page. Pages can use the internal placeholders: `%TITLE%`, `%CSS%`, and `%JS%`. When running `dev` and `build`, `%CSS%` will be replaced with `<link href="./<name>.css" rel="stylesheet">`, and `%JS%` will be replaced with `<script src="<name>.js"></script>`.
 ```html
+<html lang="en">
+  <head>
+    %CSS%
+  </head>
+  <body>
+    <div>Some content</div>
+    %JS%
+  </body>
+</html>
 ```
 
 ### `/src`

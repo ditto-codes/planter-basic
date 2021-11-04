@@ -1,9 +1,6 @@
 // See config options: https://planter.dev/docs/planter-basic/config#options
 
 module.exports = {
-  site: {
-    title: 'Planter',
-  },
   placeholders: {
     '%TITLE%': 'Planter',
   },

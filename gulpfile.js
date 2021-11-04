@@ -68,7 +68,6 @@ function normalizeInputs(inputs) {
 function configDefaults(userConfig) {
   const config = userConfig;
   
-  if (!config.site) config.site = {};
   if (!config.dev) config.dev = {};
   if (!config.build) config.build = {};
   if (!config.styles) config.styles = {};
@@ -79,7 +78,6 @@ function configDefaults(userConfig) {
   if (!config.html.options) config.html.options = {};
   if (!config.placeholders) config.placeholders = {};
   if (!config.defaultTaskOptions) config.defaultTaskOptions = {};
-  if (!config.site.title) config.site.title = 'Planter Basic';
   if (!config.src) config.src = './src';
   if (!config.static) config.static = './static';
   if (!config.dev.port) config.dev.port = 3000;
@@ -206,7 +204,6 @@ function html() {
 
   // Replace internal placeholders
   task = task
-    .pipe(replace('%TITLE%', config.site.title))
     .pipe(replace('%CSS%', css))
     .pipe(replace('%JS%', js))
   
