@@ -9,9 +9,6 @@ module.exports = {
     open: false,
     ghostMode: false,
   },
-  js: {
-    input: ['js/main.js', 'js/howdy.js']
-  },
   build: {
     outDir: './build',
   },

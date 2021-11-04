@@ -78,6 +78,13 @@ section {
     }
   }
 
+  .back-to-splash-btn {
+    margin: sp(xl) auto;
+    grid-column-start: heading;
+    grid-column-end: content;
+    text-align: center;
+  }
+
   .divider {
     @extend .content;
     color: $gray-100;
@@ -532,4 +539,23 @@ section {
   color: $black;
   background-color: $gray-100;
   padding: sp(1.5);
+}
+
+
+.btn-group {
+  padding-left: sp(sm);
+  &.btn-group-stacked {
+    button {
+      display: block;
+      margin-bottom: sp(2);
+    }
+  }
+
+  &:not(.btn-group-stacked) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  button {
+    margin-right: sp(2);
+  }
 }
