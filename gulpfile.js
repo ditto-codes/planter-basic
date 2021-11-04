@@ -130,27 +130,22 @@ if (argv.dev) {
 // Sass, Autoprefixer
 function styles() {
   let inputs = normalizeInputs(config.styles.input);
-  let streams = [];
 
-  for (let input of inputs) {
-    streams.push(gulp.src(input)
-      .pipe(sourcemaps.init())
-        .pipe(plumber())
-        .pipe(dependents())
-        .pipe(sass(config.styles.options).on('error', sass.logError))
-        .pipe(autoprefixer())
-        .pipe(gulpif(options.hash && mode === 'production',
-          rename(path => infix(path, HASH)),
-        ))
-      .pipe(sourcemaps.write())
-      .pipe(gulpif(mode === 'production',
-        gulp.dest(`${dir(config.build.outDir, config.build.assetsDir)}`),
-        gulp.dest(`.planter/${dir(config.build.assetsDir)}`),
+  return gulp.src(inputs)
+    .pipe(sourcemaps.init())
+      .pipe(plumber())
+      .pipe(dependents())
+      .pipe(sass(config.styles.options).on('error', sass.logError))
+      .pipe(autoprefixer())
+      .pipe(gulpif(options.hash && mode === 'production',
+        rename(path => infix(path, HASH)),
       ))
-      .pipe(browserSync.stream()))
-  }
-
-  return merge(...streams);
+    .pipe(sourcemaps.write())
+    .pipe(gulpif(mode === 'production',
+      gulp.dest(`${dir(config.build.outDir, config.build.assetsDir)}`),
+      gulp.dest(`.planter/${dir(config.build.assetsDir)}`),
+    ))
+    .pipe(browserSync.stream());
 }
 
 // Webpack, Babel
