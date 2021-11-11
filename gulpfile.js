@@ -82,21 +82,17 @@ function configDefaults(userConfig) {
   if (!config.static) config.static = './static';
   if (!config.dev.port) config.dev.port = 3000;
   if (!config.dev.open) config.dev.open = false;
-  if (!config.build.root) config.build.root = '';
   if (!config.build.outDir) config.build.outDir = './build';
   if (!config.build.assetsDir) config.build.assetsDir = './assets';
-  if (!config.styles.dir) config.styles.dir = 'styles';
+  if (!config.build.hashAssets) config.build.hashAssets = true;
   if (!config.styles.input) config.styles.input = ['styles/style.scss'];
   else if(typeof config.styles.input === 'string') config.styles.input = [config.styles.input]
   if (!config.styles.options) config.styles.options = { outputStyle: 'compressed' };
   if (!config.js.input) config.js.input = ['js/main.js'];
   else if(typeof config.js.input === 'string') config.js.input = [config.js.input]
-  if (!config.js.dir) config.js.dir = 'js';
   if (!config.js.options.webpack) config.js.options.webpack = { mode: 'production', devtool: 'inline-source-map' };
   if (!config.html.input) config.html.input = '*.html';
-  if (!config.html.dir) config.html.dir = '';
   if (!config.html.options.beautify) config.html.options.beautify = { indent_size: 2 };
-  if (!config.defaultTaskOptions.hash) config.defaultTaskOptions.hash = true;
 }
 
 // Create config object
@@ -137,7 +133,7 @@ function styles() {
       .pipe(dependents())
       .pipe(sass(config.styles.options).on('error', sass.logError))
       .pipe(autoprefixer())
-      .pipe(gulpif(options.hash && mode === 'production',
+      .pipe(gulpif(config.build.hashAssets && mode === 'production',
         rename(path => infix(path, HASH)),
       ))
     .pipe(sourcemaps.write())
@@ -152,7 +148,7 @@ function styles() {
 function js() {
   let inputs = normalizeInputs(config.js.input);
 
-  return gulp.src(inputs, { since: gulp.lastRun(js) })
+  return gulp.src(inputs)
     .pipe(plumber())
     .pipe(named())
     .pipe(webpack(config.js.options.webpack))
@@ -161,7 +157,7 @@ function js() {
         presets: [ '@babel/env' ]
       }))
       .pipe(gulpif(mode === 'production', uglify()))
-      .pipe(gulpif(options.hash && mode === 'production',
+      .pipe(gulpif(config.build.hashAssets && mode === 'production',
         rename(path => infix(path, HASH)),
       ))
     .pipe(sourcemaps.write())
@@ -176,17 +172,17 @@ function js() {
 function html() {
   let js = '';
   let css = '';
-  const infix = options.hash && mode === 'production' ? HASH : '';
+  const infix = config.build.hashAssets && mode === 'production' ? HASH : '';
 
   // Create link tags for output CSS
   for (let input of config.styles.input) {
     let basename = input.split('/').pop().split('.')[0];
-    css += `<link href="${config.build.assetsDir}/${basename}${infix}.css" rel="stylesheet">\n`;
+    css += `<link href="${config.build.assetsDir}/${basename}.${infix}.css" rel="stylesheet">\n`;
   }
   // Create script tags for output JS
   for (let input of config.js.input) {
     let basename = input.split('/').pop().split('.')[0];
-    js += `<script src="${config.build.assetsDir}/${basename}${infix}.js"></script>\n`;
+    js += `<script src="${config.build.assetsDir}/${basename}.${infix}.js"></script>\n`;
   }
 
   // Get user defined placeholders
@@ -194,7 +190,7 @@ function html() {
   if (placeholderKeys.length === 0) return;
   
   // Start task stream
-  let task = gulp.src(`${config.src}/${config.html.input}`, { since: gulp.lastRun(html) })
+  let task = gulp.src(`${config.src}/${config.html.input}`)
     .pipe(plumber())
 
   // Replace internal placeholders
@@ -237,16 +233,16 @@ function static() {
 function watch() {
   const options = { ignoreInitial: false };
     
-  gulp.watch(`${config.src}/${dir(config.styles.dir)}**/*.scss`, options, styles)
+  gulp.watch(`${config.src}/**/*.scss`, options, styles)
     .on('change', browserSync.reload);
     
-  gulp.watch(`${config.src}/${dir(config.js.dir)}**/*.js`, options, js)
+  gulp.watch(`${config.src}/**/*.js`, options, js)
     .on('change', browserSync.reload);
 
   gulp.watch(`${config.static}/*`, options, static)
     .on('change', browserSync.reload);
     
-  gulp.watch(`${config.src}/${dir(config.html.dir)}**/*.html`, options, html)
+  gulp.watch(`${config.src}/**/*.html`, options, html)
     .on('change', browserSync.reload);
 
 }

@@ -9,24 +9,22 @@ The `planter.config.js` file is the main config file for your project, which all
 module.exports = {
   // Comment here about build options
   build: {
-    assetsDir: './assets',
+    // The output directory for the build task
     outDir: './build',
-    root: '',
+    // The directory for the bundled assets, relative to outDir
+    assetsDir: './assets',
+    // Add a hash to bundled asset filenames
+    hashAssets: true,
   },
-  defaultTaskOptions: {
-    hash: true,
-  }
   dev: {
     // This gets passed as the Browsersync options object,
     // so any valid HTML options for Browsersync are valid.
+    // These are the defaults set internally.
     port: 5000,
     open: false,
     ghostMode: false,
   },
   html: {
-    // A directory path relative to 'src' where your HTML is, and any
-    // '.html' files within it will be watched for changes and used as input
-    dir: '',
     // Additional options for processing HTML
     options: {
       // This gets passed as the beautify options object,
@@ -38,9 +36,6 @@ module.exports = {
     },
   }
   js: {
-    // A directory path relative to 'src' where your JS is, and any
-    // '.js' files within it will be watched for changes
-    dir: 'js',
     // An array of entry files (relative to 'dir')
     input: ['main.js'],
     // Additional options for processing JS
@@ -58,9 +53,6 @@ module.exports = {
   // The static asset directory
   static: './static',
   styles: {
-    // A directory path relative to 'src' where your SCSS is, and any
-    // '.scss' files within it will be watched for changes
-    dir: 'styles',
     // An array of entry files (relative to 'dir').
     input: ['styles/style.scss'],
     // This gets passed as the Sass options object,
