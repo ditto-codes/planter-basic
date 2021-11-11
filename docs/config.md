@@ -4,10 +4,8 @@ All configuration files can be found at the project root.
 ## `planter.config.js`
 The `planter.config.js` file is the main config file for your project, which allows you to configure various project and build options which are consumed by the gulpfile. This config isn't required to run your project, but without it the gulp tasks will assume defaults for things like input and output directories.
 
-<!-- TODO: add missing coments -->
 ```js
 module.exports = {
-  // Comment here about build options
   build: {
     // The output directory for the build task
     outDir: './build',
