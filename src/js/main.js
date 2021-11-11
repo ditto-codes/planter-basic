@@ -1,1 +1,1 @@
-console.log('JIMBO!');
+console.log('Welcome to Planter Basic!');
