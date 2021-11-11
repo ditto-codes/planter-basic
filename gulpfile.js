@@ -172,17 +172,17 @@ function js() {
 function html() {
   let js = '';
   let css = '';
-  const infix = config.build.hashAssets && mode === 'production' ? HASH : '';
+  const infix = config.build.hashAssets && mode === 'production' ? `.${HASH}` : '';
 
   // Create link tags for output CSS
   for (let input of config.styles.input) {
     let basename = input.split('/').pop().split('.')[0];
-    css += `<link href="${config.build.assetsDir}/${basename}.${infix}.css" rel="stylesheet">\n`;
+    css += `<link href="${config.build.assetsDir}/${basename}${infix}.css" rel="stylesheet">\n`;
   }
   // Create script tags for output JS
   for (let input of config.js.input) {
     let basename = input.split('/').pop().split('.')[0];
-    js += `<script src="${config.build.assetsDir}/${basename}.${infix}.js"></script>\n`;
+    js += `<script src="${config.build.assetsDir}/${basename}${infix}.js"></script>\n`;
   }
 
   // Get user defined placeholders

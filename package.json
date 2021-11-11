@@ -6,10 +6,9 @@
     "start": "gulp dev",
     "dev": "gulp dev",
     "build": "gulp build",
-    "serve": "gulp serve",
-    "serve:build": "gulp serve --build",
+    "serve": "gulp serve --build",
     "lint:js": "eslint --ext .js --fix \"src/\"",
-    "lint:css": "npx stylelint --fix \"src/\"",
+    "lint:css": "npx stylelint --fix \"src/**/*.scss\"",
     "clean": "gulp clean"
   },
   "author": "",
@@ -34,7 +33,9 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "merge-stream": "^2.0.0",
+    "postcss-scss": "^4.0.2",
     "sass": "^1.35.2",
+    "stylelint": "^14.0.1",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^6.1.2",
     "yargs": "^15.4.1"

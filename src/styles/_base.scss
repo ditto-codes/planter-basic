@@ -77,22 +77,27 @@ h1 {
   @extend %heading;
   @include font-size($h1-font-size);
 }
+
 h2 {
   @extend %heading;
   @include font-size($h2-font-size);
 }
+
 h3 {
   @extend %heading;
   @include font-size($h3-font-size);
 }
+
 h4 {
   @extend %heading;
   @include font-size($h4-font-size);
 }
+
 h5 {
   @extend %heading;
   @include font-size($h5-font-size);
 }
+
 h6 {
   @extend %heading;
   @include font-size($h6-font-size);
@@ -149,7 +154,7 @@ small,
 
 b,
 strong {
-  font-weight: $font-weight-700;
+  font-weight: 700;
 }
 
 // LINKS (TEXT)
@@ -167,6 +172,7 @@ a {
 }
 
 a:not([href]):not([class]) {
+
   &,
   &:hover {
     color: inherit;

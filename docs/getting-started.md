@@ -24,8 +24,7 @@ In `package.json`, the following scripts are set up for use:
   "start": "gulp dev",
   "dev": "gulp dev",
   "build": "gulp build",
-  "serve": "gulp serve",
-  "serve:build": "gulp serve --build",
+  "serve": "gulp serve --build",
   "lint:js": "eslint --ext .js --fix \"src/\"",
   "lint:css": "npx stylelint --fix \"src/\"",
   "clean": "gulp clean"
@@ -36,22 +35,15 @@ In `package.json`, the following scripts are set up for use:
 - `dev` – Runs the development gulp task, which starts watching your files and starts the dev server.
 - `build` – Runs the build gulp task, which builds your site for production.
 - `start` – An alias for the `dev` script.
-- `serve` – Runs an http server. By default, the server root will be `/.planter` in development mode, or `/build` in production mode.
-- `serve:build` – Runs the build gulp task, then serves `/build` as the root.
+- `serve` – Runs an http server.
 - `lint:js` – Run ESLint on your JS files.
 - `lint:css` – Run Stylelint on your SCSS/CSS files.
 - `clean` – Removes the output files for a clean slate; by default, this will delete the `/build` directory. 
 
 ### Supported Options
-Use the flags `--dev` and `--build` to specify the mode to run the `serve` and `clean` scripts. The underlying gulp tasks will use this mode to determine the output directory and file paths. The `clean` script also supports the `--all` flag to clean both the development and production output directories (`/.planter` and `/build` respectively, by default):
+Use the flags `--dev` and `--build` to specify the mode to run the `clean` script. The `clean` script also supports the `--all` flag to clean both the development and production output directories (`/.planter` and `/build` respectively, by default):
 
 ```shell
-# Serve dev output (/.planter)
-> npm run serve --dev
-
-# Serve production output (/build)
-> npm run serve --build
-
 # Clean both dev and prod directories
 > npm run clean --all
 ```
@@ -59,7 +51,6 @@ Use the flags `--dev` and `--build` to specify the mode to run the `serve` and `
 ## Project Structure
 
 ### Pages
-<!-- TODO: talk about HTML file default placeholders (%CSS%, %JS%, %TITLE%) -->
 Any `.html` file at the root of `/src` will be treated as a page. Pages can use the internal placeholders: `%TITLE%`, `%CSS%`, and `%JS%`. When running `dev` and `build`, `%CSS%` will be replaced with `<link href="./<name>.css" rel="stylesheet">`, and `%JS%` will be replaced with `<script src="<name>.js"></script>`.
 ```html
 <html lang="en">
@@ -81,7 +72,6 @@ Static assets, such as images or external scripts. These files won't be procesed
 
 ### `/build`
 This directory will be generated when you run `npm run build` and will include all HTML, JS, CSS, and other static assets, ready for production. 
-
 
 
 ## Configuration

@@ -70,11 +70,13 @@
     @media (min-width: $min) and (max-width: $max) {
       @content;
     }
-  } @else if $max == null {
+  }
+ @else if $max == null {
     @include breakpoint($lower, min) {
       @content;
     }
-  } @else if $min == null {
+  }
+ @else if $min == null {
     @include breakpoint($upper, max) {
       @content;
     }

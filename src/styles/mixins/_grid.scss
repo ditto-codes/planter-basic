@@ -82,6 +82,7 @@
 // style grid.
 
 @mixin row-cols($count) {
+
   > * {
     flex: 0 0 auto;
     width: 100% / $count;

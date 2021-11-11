@@ -51,7 +51,7 @@ $line-height-lg:              1.6 !default;
 // Note: values set to `null` will inherit from root styles applied to body
 
 $heading-font-family:         $font-family-sans-serif !default;
-$heading-font-weight:         $font-weight-700 !default;
+$heading-font-weight:         700 !default;
 $heading-font-style:          null !default;
 $heading-line-height:         $line-height-base !default;
 $heading-color:               null !default;
@@ -69,7 +69,7 @@ $h6-font-size:                1rem !default;
 // ────────────────────────────────────
 
 $display-font-family:         $font-family-sans-serif !default;
-$display-font-weight:         $font-weight-500 !default;
+$display-font-weight:         500 !default;
 $display-font-style:          null !default;
 $display-line-height:         $line-height-base !default;
 $display-color:               null !default;
@@ -84,7 +84,7 @@ $d3-font-size:                3.75rem !default;
 // ────────────────────────────────────
 
 $lead-font-size:              1.5rem !default;
-$lead-font-weight:            $font-weight-200;
+$lead-font-weight:            200;
 
 // LINKS
 // ────────────────────────────────────
