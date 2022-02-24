@@ -114,14 +114,10 @@ section {
 .color-item {
   padding: 0 sp(sm);
   min-width: 33.3333333%;
+  flex-grow: 1;
   @include bp-up(xl) {
-    flex-grow: 1;
     max-width: 33.3333333%;
   }
-}
-
-.color-examples {
-
 }
 
 .color-block {
@@ -614,6 +610,55 @@ section {
   padding: sp(1.5);
 }
 
+.color-cols {
+  display: flex !important;
+  flex-wrap: wrap;
+  row-gap: sp(lg);
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  height: 100%;
+}
+.color-col {
+  padding: 0 sp(sm);
+  min-width: 50%;
+  flex-grow: 1;
+
+  .color-block {
+    height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    // text-align: center;
+  }
+  // p { margin-bottom: 0}
+  .color-title {
+
+  }
+  .color-hex {
+
+  }
+}
+
+.color-black {
+  padding: sp(1.5);
+  background-color: $black;
+  .color-hex {
+    color: $gray-100;
+  }
+}
+
+.color-canvas {
+  padding: sp(1.5);
+  background-color: $canvas;
+  color: $black;
+  .color-hex {
+    color: $gray-300;
+  }
+}
+
+.color-hex {
+  text-transform: uppercase;
+}
 
 .btn-group {
   padding-left: sp(sm);

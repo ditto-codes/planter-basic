@@ -128,6 +128,7 @@
 .btn-text {
   // Theme
   $color: $blue;
+  $hover-color: $blue-500;
   $hover-bg-color: $blue-100;
   $active-bg-color: $blue-200;
   $focus-border: 1px solid transparent;
@@ -139,7 +140,7 @@
 
   &:hover {
     background-color: $hover-bg-color;
-    color: $color;
+    color: $hover-color;
   }
 
   &:active {
