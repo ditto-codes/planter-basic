@@ -4,6 +4,6 @@
 .vsls.json
 
 # planter specific
-/.planter/
 /dist/
 /build/
+.parcel-cache
