@@ -32,6 +32,12 @@
 
 */
 
+// For math.div
+// Read more: https://sass-lang.com/documentation/breaking-changes/slash-div
+@use "sass:math";
+
+$variable-prefix: 'bs';
+
 /// Grid system
 //
 // Generate semantic grid columns with these mixins.
@@ -62,7 +68,7 @@
 
 @mixin make-col($size, $columns: $grid-columns) {
   flex: 0 0 auto;
-  width: percentage($size / $columns);
+  width: percentage(math.div($size, $columns));
 }
 
 @mixin make-col-auto() {
@@ -71,7 +77,7 @@
 }
 
 @mixin make-col-offset($size, $columns: $grid-columns) {
-  $num: $size / $columns;
+  $num: math.div($size, $columns);
   margin-left: if($num == 0, 0, percentage($num));
 }
 
@@ -85,7 +91,20 @@
 
   > * {
     flex: 0 0 auto;
-    width: 100% / $count;
+    width: math.div(100%, $count);
+  }
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
   }
 }
 
@@ -94,7 +113,7 @@
 // Used only by Bootstrap to generate the correct number of grid classes given
 // any value of `$grid-columns`.
 
-@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $breakpoints) {
   @each $breakpoint in map-keys($breakpoints) {
     $infix: breakpoint-infix($breakpoint, $breakpoints);
 
