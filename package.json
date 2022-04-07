@@ -3,16 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "start": "npm run dev",
-    "dev": "parcel './src/*.html'",
-    "build": "parcel build './src/*.html'",
+    "dev": "vite",
+    "build": "vite build",
     "lint:js": "eslint --ext .js --fix \"src/\"",
     "lint:css": "npx stylelint --fix \"src/**/*.scss\""
   },
   "license": "0BSD",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.3.2",
     "eslint": "^7.31.0",
-    "parcel": "latest",
-    "stylelint": "^14.0.1"
+    "stylelint": "^14.0.1",
+    "vite": "^2.9.1"
   }
 }
