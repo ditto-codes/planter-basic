@@ -40,6 +40,7 @@ $font-weight-base:            null !default;
 // BODY
 $body-font-color:             $black !default;
 $body-text-align:             left !default;
+$body-letter-spacing:         null !default;
 
 // LINE HEIGHT
 $line-height-base:            1.2 !default;
@@ -57,6 +58,7 @@ $heading-line-height:         $line-height-base !default;
 $heading-color:               null !default;
 $heading-text-transform:      null !default;
 $heading-margin-bottom:       $spacer-2 !default;
+$heading-letter-spacing:      null !default;
 
 $h1-font-size:                3rem !default;
 $h2-font-size:                2.5rem !default;
@@ -75,6 +77,7 @@ $display-line-height:         $line-height-base !default;
 $display-color:               null !default;
 $display-text-transform:      null !default;
 $display-margin-bottom:       $spacer-2 !default;
+$display-letter-spacing:      null !default;
 
 $d1-font-size:                6rem !default;
 $d2-font-size:                4.75rem !default;
@@ -96,6 +99,7 @@ $link-decoration:               underline !default;
 $link-hover-color:              $blue-700 !default;
 $link-hover-background-color:   $cyan-100 !default;
 $link-hover-decoration:         null !default;
+$link-letter-spacing:           null !default;
 
 // SMALL
 // ────────────────────────────────────
@@ -104,6 +108,7 @@ $small-font-size:               0.8125rem !default;
 $small-font-weight:             600 !default;
 $small-font-style:              null !default;
 $small-text-transform:          uppercase !default;
+$small-letter-spacing:          null !default;
 
 // HIGHLIGHT
 // ────────────────────────────────────

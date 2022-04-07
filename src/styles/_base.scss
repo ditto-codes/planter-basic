@@ -48,6 +48,7 @@ body {
   line-height: $line-height-base;
   color: $body-font-color;
   text-align: $body-text-align;
+  letter-spacing: $body-letter-spacing;
   background-color: $white; // 1
   -webkit-text-size-adjust: 100%; // 2
   -webkit-tap-highlight-color: rgba($black, 0); // 3
@@ -70,7 +71,7 @@ body {
   color: $heading-color;
   margin-bottom: $heading-margin-bottom;
   margin-top: 0;
-  letter-spacing: 1px;
+  letter-spacing: $display-letter-spacing;
 }
 
 h1 {
@@ -121,8 +122,8 @@ p {
   text-transform: $display-text-transform;
   color: $display-color;
   margin-bottom: $display-margin-bottom;
+  letter-spacing: $display-letter-spacing;
   margin-top: 0;
-  letter-spacing: 1px;
 }
 
 .d1 {
@@ -150,6 +151,7 @@ small,
   @include font-size($small-font-size);
   font-weight: $small-font-weight;
   text-transform: $small-text-transform;
+  letter-spacing: $small-letter-spacing;
 }
 
 b,
@@ -168,6 +170,7 @@ code {
 a {
   color: $link-color;
   text-decoration: $link-decoration;
+  letter-spacing: $link-letter-spacing;
 
   &:hover {
     color: $link-hover-color;
