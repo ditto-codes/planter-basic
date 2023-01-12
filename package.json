@@ -8,7 +8,7 @@
     "lint:js": "eslint --ext .js --fix \"src/\"",
     "lint:css": "npx stylelint --fix \"src/**/*.scss\""
   },
-  "license": "0BSD",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^7.31.0",
     "stylelint": "^14.0.1",
